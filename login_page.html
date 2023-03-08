@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            
+            h2 {
+                text-align: center;
+                color: darkblue;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            div {
+                width: 30%;
+                padding: 10px;
+                background-color: antiquewhite;
+                border: 2px solid green;
+                border-radius: 25px;
+                box-shadow: 8px 8px 8px grey;
+            }
+
+            label {
+                display: inline-block;
+                width: 100px;
+                padding: 5px;
+               /* margin-left: 40%; */
+                text-align: right;
+                color: crimson;
+            }
+
+            .center {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: auto;
+                height: auto;
+                margin-top: 100px;
+            }
+
+            .center_login {
+                display: block;
+                margin-left: auto;
+                /* margin-top: 200px; */
+                margin-right: auto;
+            }
+
+            .button {
+                background-color: green;
+                color: white;
+                border-radius: 4px;
+                font-size: medium;
+                padding: 5px 10px;
+            }
+
+            .button:hover {
+                cursor: pointer;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <img src="src\img\checkin.png" alt="initial_image" class="center">
+        <h2>Evotek Face Checkin</h2>
+        
+        <form>
+            <div style="text-align: center;" class="center_login">
+                <label for="username">Tên đăng nhập:</label>
+                <input type="text" id="username" name="username" value="username"><br>
+                <label for="password">Mật khẩu:</label>
+                <input type="password" id="password" name="password" value="password"><br>
+                <a href="https://www.google.com/">Quên mật khẩu?</a><br>
+                <button type="button" class="button">Đăng nhập</button>
+            </div>
+        </form>
+        
+        <script>
+            function redirectPage() {
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        window.location.href = "main_page.html"
+                    }
+                };
+                xhttp.open("POST", "http://127.0.0.1:8000/login/", true);
+                xhttp.send();
+            }
+        </script>
+    </body>
+</html>
